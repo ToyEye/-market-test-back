@@ -1,5 +1,5 @@
 import express from "express";
-import * as ctrl from "../controllers/orderController.js";
+import ctrl from "../controllers/orderController.js";
 import { isEmptyBody } from "../middlewares/isEmptyBody.js";
 import { validateBody } from "../decorators/validateBody.js";
 import * as schema from "../model/orderModel.js";
@@ -14,3 +14,5 @@ orderRoute.get(
   validateBody(schema.getOrders),
   ctrl.getOrders
 );
+
+orderRoute.get("/:orderId", isEmptyBody, ctrl.getOrder);
