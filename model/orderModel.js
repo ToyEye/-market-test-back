@@ -48,4 +48,8 @@ export const AddOrder = Joi.object({
   totalCost: Joi.number().required(),
 });
 
+export const getOrders = Joi.object({
+  email: Joi.string().required(),
+});
+
 export const Order = model("order", orderSchema);
