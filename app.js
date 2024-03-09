@@ -6,6 +6,7 @@ import "dotenv/config";
 import { shopRoute } from "./routes/shops.js";
 import { drugsRouter } from "./routes/drugs.js";
 import { usersRoute } from "./routes/users.js";
+import { orderRoute } from "./routes/orders.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/shops", shopRoute);
 app.use("/api/shopdrugs", drugsRouter);
 app.use("/api/auth", usersRoute);
+app.use("/api/order", orderRoute);
 
 app.use((_, res) => {
   res.status(404).json({ message: "Route not found" });

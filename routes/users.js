@@ -2,7 +2,7 @@ import express from "express";
 
 import { validateBody } from "../decorators/validateBody.js";
 import * as schemas from "../model/users.js";
-import authCtrl from "../controllers/auth.js";
+import authCtrl from "../controllers/authController.js";
 import { isEmptyBody } from "../middlewares/isEmptyBody.js";
 import { authenticate } from "../middlewares/authenticate.js";
 
