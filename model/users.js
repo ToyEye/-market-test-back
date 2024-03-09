@@ -4,6 +4,7 @@ import { handleSaveError } from "../helpers/mongooseError.js";
 
 const userSchema = new Schema(
   {
+    name: { type: String, required: true },
     email: {
       type: String,
       required: [true, "Email is required"],
@@ -18,6 +19,7 @@ const userSchema = new Schema(
 userSchema.post("save", handleSaveError);
 
 export const signupSchema = Joi.object({
+  name: Joi.string().required(),
   email: Joi.string().required(),
   password: Joi.string().min(6).required(),
 });
