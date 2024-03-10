@@ -63,9 +63,8 @@ const login = async (req, res) => {
 };
 
 const getCurrent = async (req, res) => {
-  const { user, email } = req.user;
-
-  res.json({ user, email });
+  const { name, email } = req.user;
+  res.json({ name, email });
 };
 
 const logout = async (req, res) => {
@@ -75,19 +74,9 @@ const logout = async (req, res) => {
   res.json({ message: "logout success" });
 };
 
-const changeSubscription = async (req, res) => {
-  const { _id } = req.user;
-  const { subscription } = req.body;
-
-  await User.findByIdAndUpdate(_id, { subscription });
-
-  res.json({ message: "subscription changed" });
-};
-
 export default {
   signUp: ctrlWrapper(signUp),
   login: ctrlWrapper(login),
   getCurrent: ctrlWrapper(getCurrent),
   logout: ctrlWrapper(logout),
-  changeSubscription: ctrlWrapper(changeSubscription),
 };
