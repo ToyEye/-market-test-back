@@ -1,6 +1,11 @@
 # You can run App using the command
 
+`npm run install`
 `npm run dev`
+
+For enviroment you need keys
+`SECRET_KEY` -for sign up
+`DATABASE` - for use MongoDB
 
 ## In this app you can
 
