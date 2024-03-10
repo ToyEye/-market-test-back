@@ -8,8 +8,8 @@ export const orderRoute = express.Router();
 
 orderRoute.post("/", isEmptyBody, validateBody(schema.AddOrder), ctrl.addOrder);
 
-orderRoute.get(
-  "/",
+orderRoute.post(
+  "/get-all",
   isEmptyBody,
   validateBody(schema.getOrders),
   ctrl.getOrders
